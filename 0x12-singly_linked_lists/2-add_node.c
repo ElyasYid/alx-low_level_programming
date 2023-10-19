@@ -12,17 +12,17 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *pew;
-	unsigned int pen = 0;
+	unsigned int len = 0;
 
-	while (str[pen])
-		pen++;
+	while (str[len])
+		len++;
 
 	pew = malloc(sizeof(list_t));
 	if (!pew)
 		return (NULL);
 
 	pew->str = strdup(str);
-	pew->pen = pen;
+	pew->len = len;
 	pew->next = (*head);
 	(*head) = pew;
 
